@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --clr-primary-200: hsl(0, 100%, 74%); 
+    --clr-primary-300: hsl(154, 59%, 51%); 
+    
+    --clr-accent-100: hsl(248, 32%, 49%); 
+
+    --clr-neutral-200:  hsl(246, 25%, 77%); 
+    --clr-neutral-300: hsl(249, 10%, 26%); 
+
+    --ff-primary: "Poppins", sans-serif;
+
+    --fw-regular: 400; 
+    --fw-semi-bold: 500; 
+    --fw-bold: 600; 
+    --fw-bolder: 700; 
+
+    --size-100: 0.758rem; 
+    --size-200: 1.3rem; 
+    --fs-body: var(--size-100); 
+}
+
+@media(min-width: 70rem){
+    :root{
+        --fs-body: var(--size-200);
+    }
+}
+
+
+/* box-sizing rule */
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+/* reset default styling */
+
+*{
+    font: inherit; 
+    margin: 0; 
+}
+
+body{
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5rem;
+}
+
+ul{
+    list-style: none;
+    padding: 0; 
+}
+
+/* general styling */
+body{
+    color: hsl(0 0 95%); 
+    background-color: var(--clr-primary-200);
+
+    font-size: var(--fs-body);
+    font-family: var(--ff-primary);
+    text-align: center;
+
+    margin: 1rem; 
+
+    background-image: url('images/bg-intro-mobile.png');
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    display: grid; 
+    place-content: center;
+}
+
+
+@media(min-width: 70rem){
+    body{
+        text-align: start;
+        background-image: url('images/bg-intro-desktop.png');
+    }
+}
+
+
+img{
+    max-inline-size: 100%;
+    block-size: auto;
+    display: block; 
+}
+
+/* main styling */
+
+main{
+    max-width: 60rem; 
+    display: grid; 
+    gap: 4rem;
+}
+
+@media(min-width: 70rem){
+    main{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+.page-description{
+    margin-block: auto; 
+}
+
+h1{
+    color: hsl(0 0 100%); 
+    padding-block-end: 1.5rem; 
+    font-size: 1.5rem; 
+    font-weight: var(--fw-bolder);
+}
+
+@media(min-width: 70rem){
+    h1{
+        font-size: 2.7rem;
+        line-height: 3rem;
+    }
+}
+
+div > h1 + p{
+    font-size: 0.898rem;
+}
+
+.form-section{
+    display: grid; 
+    gap: 1rem; 
+}
+
+@media(min-width: 70rem){
+    .form-section{
+        margin-block: auto;
+    }
+}
+
+button{
+    height: 4rem;
+
+    border: 0; 
+    border-radius: 0.5rem;
+
+    padding-inline: 4.5rem;
+
+    font-weight: var(--fw-semi-bold);
+
+    color: var(--clr-neutral-200);
+    background-color: var(--clr-accent-100);
+    box-shadow: var(--clr-neutral-300) 0px 10px 20px;
+}
+
+@media(min-width: 70rem){
+    button{
+        font-size: 0.8rem;
+        height: 2.7rem;
+    }
+}
+
+button > span{
+    font-weight: var(--fw-bold);
+    color: hsl(0 0 100%); 
+}
+
+form{
+    background-color: aliceblue;
+    border-radius: 0.5rem;
+    padding-block: 2rem; 
+}
+
+ul{
+    display: grid; 
+    place-items: center;
+    gap: 1rem;  
+}
+
+li{
+    display: flex; 
+    flex-direction: column;
+}
+
+li > span{
+    align-self: end;
+    font-style: italic;
+    color: var(--clr-primary-200);
+    font-size: 0.685rem;
+}
+
+
+ul li input{
+    height: 3rem;
+    min-width: 16rem;
+    font-weight: var(--fw-bold);
+    border: 1px solid var(--clr-neutral-200); 
+    border-radius: 0.3rem;
+}
+
+ul li input:focus{
+    accent-color: var(--clr-neutral-300);
+}
+
+@media(min-width: 70rem){
+    ul li input{
+        width: 23rem; 
+        font-size: 1rem;
+    }
+}
+form ul li:not(:nth-child(5)) input{
+    padding-inline-start: 1rem; 
+}
+form ul li:nth-child(5) input{
+    text-transform: uppercase;
+    font-weight: var(--fw-semi-bold);
+    background-color: var(--clr-primary-300);
+    color: hsl(0 0 100%); 
+    font-size: 1rem;
+}
+
+form p{
+    color: var(--clr-neutral-200);
+    font-size: 0.689rem; 
+    padding-inline: 1.5rem;
+}
+
+@media(min-width: 70rem){
+    form p{
+        font-size: 0.6rem; 
+    }
+}
+
+form p > a{
+    text-decoration: none;
+    color: var(--clr-primary-200);
+    font-weight: var(--fw-bold);
+}
+
+form ul li:nth-child(5) input:hover, button:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+
